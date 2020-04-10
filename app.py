@@ -19,6 +19,9 @@ tick_width_S=1.0
 docu_color=svgwrite.rgb(10, 10, 16, '%')
 docu_width=0.5
 
+# a constant for approximate sizing
+szfactor=5.64
+
 ################# functions ########################
 
 # convert polar to cartesian
@@ -191,7 +194,7 @@ dwg.add(dwg.line((0, -1), (0, 1), stroke=docu_color, stroke_width=docu_width))
 # have a total of 31 ticks (i.e. per half degree)
 # every 10 ticks (5 deg C) for large markings
 # every 2 ticks (1 deg C) for medium markings
-h=265 # 230 / 5.2 = 44.2mm 
+h=265 # 265 / 5.64 = 47mm 
 full_arc(h, 31)
 full_ticks(h, 31, 10, 5, 4, 10, 2)
 full_label(h+12, 16)
